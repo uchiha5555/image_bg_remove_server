@@ -54,6 +54,10 @@ const uploadFiles = async (req, res) => {
 
 app.post("/upload_files", upload.single("image"), uploadFiles);
 
+app.get("/", (req, res) => {
+  res.json({ test: "Hello" });
+});
+
 app.listen(5000, () => {
   console.log("Server started....");
 });
