@@ -34,12 +34,12 @@ const uploadFiles = async (req, res) => {
 
   console.log(image);
 
-  let config = {
+  const config = {
     debug: true,
 
     fetchArgs: {
-      mode: "no-cors",
-    },
+      mode: 'no-cors'
+    }
   };
 
   removeBackground(image.path, config).then(async (blob) => {
