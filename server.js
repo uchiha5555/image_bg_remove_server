@@ -34,7 +34,13 @@ const uploadFiles = async (req, res) => {
 
   console.log(image);
 
-  removeBackground(image.path).then(async (blob) => {
+  let config = {
+    fetchArgs: {
+      mode: "no-cors",
+    },
+  };
+
+  removeBackground(image.path, config).then(async (blob) => {
     console.log(blob);
     const bufferData = Buffer.from(await blob.arrayBuffer());
 
