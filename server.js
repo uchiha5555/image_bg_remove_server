@@ -35,6 +35,8 @@ const uploadFiles = async (req, res) => {
   console.log(image);
 
   let config = {
+    debug: true,
+
     fetchArgs: {
       mode: "no-cors",
     },
